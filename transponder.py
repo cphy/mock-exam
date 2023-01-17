@@ -12,19 +12,5 @@ def transform(legacy_data):
         for letter in row:
             letter = letter.lower()  
             if letter in legacy_data:
-                legacy_data[letter].append(col.index(letter)+1)
-            else:
-                legacy_data[letter] = [col.index(letter)+1]
-    return data
-
-
-
-    data = {}
-    for col in spreadsheet.columns:
-        for letter in col:
-            letter = letter.lower()
-            if letter in data:
-                data[letter].append(col.index(letter)+1)
-            else:
-                data[letter] = [col.index(letter)+1]
+                legacy_data[letter].append(col.index(letter))
     return data
